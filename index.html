@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+To be done...
+
+INTERFACE
+- Support i18n of some sort
+
+LOGIC
+- Fade in rain sound when user presses Start. Then ring bell.
+- Have a maximum period length threshold
+
+-->
+
+<head>
+  <title>Train your attention</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Qwigley">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Rain pours basically without interruption. -->
+<!-- Since <audio> tags won't loop seamlessly we just store the mp3 name in a <span>. It's a hack but it works. -->
+<span id="rain" style="display:none">heavy_rain.mp3</span>
+
+<!-- Bell rings one at the beginning and once at the end -->
+<audio id="bell" preload>
+  <source src="meditation_bell.mp3" type="audio/mp3"/>
+  <h1>Sorry! This won't work because your web browser does not support HTML5 audio.</h1>
+</audio>
+
+
+<!-- Bottom container: Simple feedback during meditation session -->
+<div id="bottom_container" class="frosted_container transparent">
+  <div>
+    <div id="fb_listen"  class="transparent overlap">Listen to the rain...</div>
+    <div id="fb_theend"  class="transparent overlap">End of this session.</div>
+    <br/>
+  </div>
+
+  <div>
+    <span id="fb_goodjob" class="transparent overlap positive">Good job!</span>
+    <span id="fb_wander"  class="transparent overlap negative">Your attention wandered.</span>
+    <span id="fb_eager"   class="transparent overlap negative">You pressed a key too early.</span>
+    <br/>
+  </div>
+  <div id="fb_score" class="transparent">Today's score is <span id="score_value" class="positive"></span>.</div>
+</div>
+
+<!-- Top container: Instructions and Start button -->
+<div id="top_container" class="frosted_container">
+  <h1>Train your attention</h1>
+
+  <p>Once you click the Start button below you will hear a meditation bell and some rain drumming in the background.
+  Gently place your attention on the sound of the rain pouring down.</p>
+
+  <p>After a little while the rain will become noticeably quieter. This is your cue to press the space bar to show that
+  you are still paying attention. It's that simple. The meditation session will come to an end when you either press a key
+  too early or when you miss the cue.</p>
+
+  <p>If during the session you notice your mind starts to wander, don't feel bad. You did nothing wrong. Calmly bring your
+  attention back to the sound of the rain, like a bumblebee that sometimes strays away from the flowers but eventually comes back.</p>
+
+  <p>Every time you gently place your attention back on the rain you are training your mind.</p>
+
+  <p>Ready?</p>
+
+  <div id="start_button" onmousedown="start_button_pressed()">Start</button>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+

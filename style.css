@@ -1,0 +1,106 @@
+html { 
+    /* Background */
+    background     : url(Tropical_rain_in_a_Koi_Pond-by-Roberto_Verzo-BY_NC_ND_20.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+    /* Text */
+    font-family    : 'Qwigley', cursive;
+    font-size      : 2.5vw;
+    color          : #D0D0D0;
+    text-shadow    : 0 0 .2rem black; 
+}
+
+h1 {
+    color          : #F85850; /* Same as .negative */
+    font-size      : 2.5rem;
+    font-weight    : normal;
+    margin         : 0;
+}
+
+p {
+    margin         : .33rem 0;
+}
+
+.frosted_container {
+    /* Same background as <body>, but blurred*/
+    background     : url(Tropical_rain_in_a_Koi_Pond_BLURRED-by-Roberto_Verzo-BY_NC_ND_20.jpg) no-repeat center center fixed; 
+    background-size: cover;
+
+    /* Select a size and border */
+    position       : fixed;
+    width          : 60%;
+    right          : 20%;
+    border         : 1px solid #A0A090;
+    border-radius  : 1rem;
+    margin         : 0;
+
+    font-size      : 1rem;
+}
+
+#top_container {
+    padding        : 1rem;
+    top            : .5rem;
+}
+
+#bottom_container {
+    padding        : 1rem;
+    bottom         : .5rem;
+    right          : .5rem;
+    width          : 40%;
+    font-size      : 2rem;
+}
+
+#start_button {
+    background-color: #80B030; /* Same as .positive below */
+    color          : #203030; /* Similar to the shadows in the water */
+    font-family    : inherit;
+    padding        : 0rem .5rem;
+    text-align     : center;
+    text-decoration: none;
+    display        : inline-block;
+    font-size      : 2rem;   /* Same as h1 */
+    width          : 30%;
+    margin-left    : 35%;
+    border         : 0;
+    border-radius  : 1rem;    /* Same as .frosted_container */
+    box-shadow     : 0 0 .2rem black; /* Same as html's text shadow */
+    cursor         : pointer;
+    text-shadow    : none;
+}
+
+.transparent {
+    opacity     : 0.0;
+}
+
+.overlap {
+    position    : absolute;
+}
+
+.positive {
+    color       : #80B030;   /* Same as start_button */
+}
+
+.negative {
+    color          : #F85850; /* Same as h1 */
+}
+
+audio {
+    display     : none;
+}
+
+@keyframes blurFadeOut {
+    from { opacity: 1; text-shadow: 0 0 .2rem black; }
+    to   { opacity: 0; text-shadow: 0 0  1rem white; }
+}
+
+@keyframes blurFadeIn {
+    from { opacity: 0; text-shadow: 0 0  1rem white; }
+    to   { opacity: 1; text-shadow: 0 0 .2rem black; }
+}
+
+@keyframes blurFadeInThenOut {
+      0% { opacity: 0; text-shadow: 0 0  1rem; }
+     50% { opacity: 1; text-shadow: 0 0 .2rem; }
+    100% { opacity: 0; text-shadow: 0 0  1rem; }
+}
+
